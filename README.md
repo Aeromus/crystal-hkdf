@@ -1,6 +1,6 @@
 # hkdf
 
-TODO: Write a description here
+A Crystal implementation of a HMAC-based Extract-and-Expand Key Derivation Function as defined [here](https://datatracker.ietf.org/doc/html/rfc5869)
 
 ## Installation
 
@@ -9,7 +9,7 @@ TODO: Write a description here
    ```yaml
    dependencies:
      hkdf:
-       github: your-github-user/hkdf
+       github: Aeromus/hkdf
    ```
 
 2. Run `shards install`
@@ -20,11 +20,10 @@ TODO: Write a description here
 require "hkdf"
 ```
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+Example Usage
+```crystal
+  Hkdf.hkdf(my_ikm, 32)
+```
 
 ## Contributing
 
@@ -36,4 +35,5 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Andrew Knoblach](https://github.com/your-github-user) - creator and maintainer
+- [Andrew Knoblach](https://github.com/Aeromus) - creator and maintainer
+- [Isaac Sloan] (https://github.com/elorest)    - contributor 

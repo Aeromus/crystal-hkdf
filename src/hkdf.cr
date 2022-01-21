@@ -8,8 +8,9 @@ module Hkdf
     OpenSSL::HMAC.digest(algo, key, data)
   end
   
+  #IKM = Input Keying Materal, Salt = Optional salt value, Info = Optional contex and application specific information, Length = Length of the output keying material in octets
   def self.hkdf(ikm, length=32 ,salt : Bytes=Bytes.empty, info : Bytes=Bytes.empty, algo=OpenSSL::Algorithm::SHA256)
-    #prk = psuedorandom key
+    #prk = pseudorandom key
     #Extract step
     prk = hmac(algo,salt, ikm)
 
@@ -29,7 +30,8 @@ module Hkdf
       buf.write_byte(i.to_u8)
       t.push(hmac(algo, prk, buf))
     end
-
+    
+    #OKM = Output Key Material (of Length octets)
     okm = IO::Memory.new
     t.each do |b|
       okm.write(b)
