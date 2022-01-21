@@ -36,4 +36,4 @@ Example Usage
 ## Contributors
 
 - [Andrew Knoblach](https://github.com/Aeromus) - creator and maintainer
-- [Isaac Sloan] (https://github.com/elorest)    - contributor 
+- [Isaac Sloan](https://github.com/elorest)    - contributor 
