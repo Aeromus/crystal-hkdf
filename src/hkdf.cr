@@ -22,9 +22,9 @@ module Hkdf
     t.push(Bytes.empty)
     (1..n).each do |i|
       buf = IO::Memory.new
-      buf.write_byte(t[i-1].bytes)
-      buf.write_bytes(info)
-      buf.write_bytes(i.chr)
+      buf.write(t[i-1])
+      buf.write(info)
+      buf.write(i.chr)
       okm.push(hmac(algo, prk, buf))
     end
 
